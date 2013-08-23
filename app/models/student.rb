@@ -11,9 +11,9 @@ class Student < ActiveRecord::Base
 
   attr_accessor :age
 
-  def name
-    "#{first_name} #{last_name}"
-  end
+  # def name
+  #   "#{first_name} #{last_name}"
+  # end
   
 
   def age

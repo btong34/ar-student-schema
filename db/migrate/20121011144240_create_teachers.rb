@@ -2,16 +2,13 @@ require_relative '../config'
 
 # this is where you should use an ActiveRecord migration to 
 
-class CreateStudents < ActiveRecord::Migration
+class CreateTeachers < ActiveRecord::Migration
   def change
-     create_table :students do |t|
+     create_table :teachers do |t|
       t.string :first_name
       t.string :last_name
-      t.belongs_to :teacher
-      t.string :gender
       t.string :email
       t.string :phone
-      t.date :birthday
     end
   end
 end

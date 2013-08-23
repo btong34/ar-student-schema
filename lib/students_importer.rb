@@ -1,5 +1,6 @@
 require_relative '../app/models/student'
 
+
 module StudentsImporter
   def self.import(filename=File.dirname(__FILE__) + "/../db/data/students.csv")
     field_names = nil
@@ -15,4 +16,15 @@ module StudentsImporter
       end
     end
   end
+
+  def self.assign_teacher
+    Student.transaction do
+      Student.find_each(:batch_size => 6) do |student|
+        student.update_attributes(
+          :teacher_id => rand(9) + 1 
+        )
+      end
+    end
+  end
+
 end
